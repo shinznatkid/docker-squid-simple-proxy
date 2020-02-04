@@ -29,7 +29,7 @@ else
 fi
 
 if ( [ -n "${HTTP_PORT}" ] ); then
-  sed -i "s/http_port 3128/http_port ${HTTP_PORT}/g" test.conf
+  sed -i "s/http_port 3128/http_port ${HTTP_PORT}/g" /etc/squid/squid.conf
 fi
 
 # Allow arguments to be passed to squid.
