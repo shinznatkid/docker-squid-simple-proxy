@@ -28,6 +28,10 @@ else
   sed -i "/http_access deny manager/d" /etc/squid/squid.conf
 fi
 
+if ( [ -n "${HTTP_PORT}" ] ); then
+  sed -i "s/http_port 3128/http_port ${HTTP_PORT}/g" test.conf
+fi
+
 # Allow arguments to be passed to squid.
 if [[ ${1:0:1} = '-' ]]; then
   EXTRA_ARGS="$@"
